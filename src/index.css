@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1B3D8C;
+  --gold: #FAB937;
+  --earth-red: #C75D4B;
+  --deep-green: #2A5A3B;
+  --warm-sand: #E6DCCC;
+  --terracotta: #9B4B3D;
+  --ivory: #F7F3E8;
+  --deep-brown: #4A3427;
+  --bright-orange: #FF7F41;
+  --soft-gold: #DFC598;
+  --forest-green: #1E453E;
+  --ocean-blue: #476C9B;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--ivory);
+  color: var(--deep-brown);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.accent-font {
+  font-family: 'Playfair Display', serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold transition duration-300 hover:bg-deep-green;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold transition duration-300 hover:bg-ivory;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md border border-warm-sand p-6;
+  }
+
+  .feature-box {
+    @apply bg-ivory border-l-4 border-gold p-6;
+  }
+
+  .input-field {
+    @apply border-2 border-warm-sand rounded-md px-4 py-2 focus:border-primary focus:outline-none;
+  }
+}
+
+/* Add smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add a subtle animation for page transitions */
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+}
+
+/* Add cultural patterns and elements */
+.cultural-pattern {
+  background-image: url('/patterns/bamenda-pattern.svg');
+  background-repeat: repeat;
+  background-size: 100px;
+  opacity: 0.1;
+}
+
+.cultural-border {
+  border-image: url('/patterns/bamenda-border.svg') 30 round;
+  border-image-slice: 30;
+  border-image-repeat: round;
+  border-width: 20px;
+  border-style: solid;
+}
